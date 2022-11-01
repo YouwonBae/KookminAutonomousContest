@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: my_ultra
+Description: Description of my_ultra
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

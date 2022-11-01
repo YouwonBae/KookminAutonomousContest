@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: my_lidar
+Description: Description of my_lidar
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
