@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: my_cam
+Description: Description of my_cam
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
