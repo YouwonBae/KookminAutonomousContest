@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: hough_drive
+Description: Description of hough_drive
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
