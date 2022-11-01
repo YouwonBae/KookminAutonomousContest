@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+  <include file="$(find xycar_lidar)/launch/xycar_lidar.launch" />
+  <include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic.launch" />
+  <node name="obstacle" pkg="test_drive" type="obstacle.py" output="screen" />
+</launch>

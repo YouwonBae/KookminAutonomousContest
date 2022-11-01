@@ -1,0 +1,28 @@
+<launch>
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+  <include file="$(find xycar_lidar)/launch/xycar_lidar.launch" />
+  <include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic.launch" />
+  <include file="$(find ar_track_alvar)/launch/pr2_indiv_no_kinect.launch">
+    <arg name="cam_image_topic" value="/usb_cam/image_raw" />
+    <arg name="cam_info_topic" value="/usb_cam/camera_info" />
+    <arg name="output_frame" value="usb_cam" />
+  </include>
+
+  <!-- <include file="$(find test_drive)/mission/launch/parking_horizon.launch" />
+  <include file="$(find test_drive)/mission/launch/tunnel_test.launch" /> -->
+  <!-- <include file="$(find test_drive)/mission/launch/parking_vertical.launch" />
+  <include file="$(find test_drive)/mission/launch/obstacle_test.launch" />
+  <include file="$(find test_drive)/mission/launch/crosswalk.launch" /> -->
+
+  <!-- <arg name="mission" default="parking_horizon" doc="mission type [parking_horizon, tunnel, parking_vertical, obstacle, crosswalk]"/>
+  <node pkg="topiocar_core" type="$(arg mission)_controll" name="$(arg mission)_controll" output="screen"/> -->
+
+  <node name="mission_drive" pkg="test_drive" type="mission_drive.py" output="screen" />
+  <!-- <node name="H_parking" pkg="test_drive" type="parking_horizon_core.py" output="screen" />
+  <node name="Tunnel" pkg="test_drive" type="tunnel_core.py" output="screen" />
+  <node name="V_parking" pkg="test_drive" type="parking_vertical_core.py" output="screen" /> -->
+  <node name="Obstacle" pkg="test_drive" type="obstacle_core.py" output="screen" />
+  <!-- <node name="Crosswalk" pkg="test_drive" type="crosswalk_core.py" output="screen" /> -->
+
+</launch>

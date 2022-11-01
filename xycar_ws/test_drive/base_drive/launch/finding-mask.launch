@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+  <node name="finding-mask" pkg="test_drive" type="finding-mask.py" output="screen" />
+</launch>

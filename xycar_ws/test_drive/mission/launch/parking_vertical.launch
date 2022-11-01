@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+  <include file="$(find xycar_lidar)/launch/xycar_lidar.launch" />
+  <include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic.launch" />
+  <include file="$(find ar_track_alvar)/launch/pr2_indiv_no_kinect.launch">
+    <arg name="cam_image_topic" value="/usb_cam/image_raw" />
+    <arg name="cam_info_topic" value="/usb_cam/camera_info" />
+    <arg name="output_frame" value="usb_cam" />
+  </include>
+  <node name="parking_vertical" pkg="test_drive" type="parking_vertical.py" output="screen" />
+</launch>
